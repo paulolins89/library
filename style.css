@@ -1,0 +1,69 @@
+#outerShelfNotRead{
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(128, 128, 128, 0.747);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 800px;
+    height: 160px;
+    padding: 0px 10px 15px 10px;
+    background-color: lightgrey;
+    box-shadow: 0px 20px 20px grey;
+}
+
+#innerShelfNotRead{
+    height: 220px;
+    position: relative;
+    bottom: 60px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.book{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    writing-mode: vertical-rl;
+    max-height: 210px;
+    padding: 10px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/*height and width need to be established on javascript*/
+#book1{
+    height: 180px;
+    width: 35px;
+    background-color: red;
+}
+#book2{
+    height: 200px;
+    width: 39px;
+    background-color: green;
+}
+
+#book3{
+    height: 150px;
+    width: 20px;
+    background-color: yellow;
+}
+#book4{
+    height: 180px;
+}
+#book5{
+    height: 300px;
+}
+
+/*needs to be here*/
+#bookEnd{
+    border-radius: 0px;
+    order: 99;
+    flex-grow: 1;
+    height: 139px;
+    border-color: transparent rgba(128, 128, 128, 0.747) rgba(128, 128, 128, 0.747)  rgba(128, 128, 128, 0.747);
+}
