@@ -1,10 +1,18 @@
-#outerShelfNotRead{
+h1, h2{
+    text-align: center;
+}
+
+#addButton{
+    margin-left: auto;
+    height: 50px;
+    
+}
+
+.outerShelf{
     border-style: solid;
     border-width: 1px;
     border-color: rgba(128, 128, 128, 0.747);
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
+    margin: 100px auto 80px auto;
     width: 800px;
     height: 160px;
     padding: 0px 10px 15px 10px;
@@ -12,7 +20,7 @@
     box-shadow: 0px 20px 20px grey;
 }
 
-#innerShelfNotRead{
+.innerShelf{
     height: 220px;
     position: relative;
     bottom: 60px;

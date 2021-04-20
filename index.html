@@ -5,21 +5,32 @@
     </head>
     <body>
         <h1>Library</h1>
-        <div id = "outerShelfNotRead">
-            <div id = "innerShelfNotRead">
-                
+        <input id = "addButton" type="button" value="Add another book to the shelf!"></input>
+        <h2>Not read yet</h2>
+        
+        <div class = "outerShelf" id = "outerShelfNotRead">
+            <div class = "innerShelf" id = "innerShelfNotRead">
+                <div class = "book" id = "book1">Harry Potter</div>
+                <div class = "book" id = "book2">The Lord of the Rings</div>
+                <div class = "book" id = "book3">Pokemon</div>
+                <div class = "book" id = "book4">BookMan</div>
+                <div class = "book" id = "book5">This book has a very long title that we should check </div>               
+                <div class = "book" id = "bookEnd"></div>
+            </div>
+        </div>
+
+        <h2>Read</h2>
+        
+        <div class = "outerShelf" id = "outerShelfRead">
+            <div class = "innerShelf" id = "innerShelfRead">
                 <div class = "book" id = "book1">Harry Potter</div>
                 <div class = "book" id = "book2">The Lord of the Rings</div>
                 <div class = "book" id = "book3">Pokemon</div>
                 <div class = "book" id = "book4">BookMan</div>
                 <div class = "book" id = "book5">This book has a very long title that we should check </div>
-                
-                
                 <div class = "book" id = "bookEnd"></div>
             </div>
         </div>
-        <div id = "topShelfNotRead"></div>
-        <div id = "shelfRead"></div>
         <script src='library.js'></script>
     </body>
 </html>
