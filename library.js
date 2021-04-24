@@ -25,7 +25,7 @@ function addBookToLibrary(myLibrary){
         newBook.style.backgroundColor = "rgb(" + myLibrary[i].color[0] + ", " +
                                                  myLibrary[i].color[1] + ", " +
                                                  myLibrary[i].color[2] + ")";
-        newBook.appendChild(document.createTextNode(myLibrary[i].title));
+        newBook.appendChild(document.createTextNode(myLibrary[i].title));    
     }
 }
 
@@ -43,6 +43,7 @@ const closeFormButton = document.getElementById('closeButton');
 const submitButton = document.getElementById('submitButton');
 const innerShelfRead = document.getElementById('innerShelfRead');
 const innerShelfNotRead = document.getElementById('innerShelfNotRead');
+const bookEndNotRead = document.getElementById('bookEndNotRead');
 
 console.log(myLibrary);
 addBookToLibrary(myLibrary);

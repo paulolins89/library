@@ -9,9 +9,6 @@ h1, h2{
 }
 
 .outerShelf{
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgba(128, 128, 128, 0.747);
     margin: 100px auto 80px auto;
     width: 800px;
     height: 160px;
@@ -38,7 +35,7 @@ h1, h2{
     writing-mode: vertical-rl;
     max-height: 210px;
     padding: 10px;
-    max-width: 40px;
+    /*max-width: 40px;*/
     display: flex;
     align-items: center;
 }
@@ -68,13 +65,7 @@ h1, h2{
 }
 
 /*needs to be here*/
-#bookEnd{
-    border-radius: 0px;
-    order: 99;
-    flex-grow: 1;
-    height: 139px;
-    border-color: transparent rgba(128, 128, 128, 0.747) rgba(128, 128, 128, 0.747)  rgba(128, 128, 128, 0.747);
-}
+
 
 #book-form{
     display: none;
