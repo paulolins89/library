@@ -1,55 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Library</h1>
-        <input id = "addButton" type="button" value="Add another book to the shelf!"></input>
-        <h2>Not read yet</h2>
-
-        <div class = "outerShelf" id = "outerShelfNotRead">
-            <div class = "innerShelf" id = "innerShelfNotRead">
-                <div class = "book" id = "book1">Harry Potter</div>
-                <div class = "book" id = "book2">The Lord of the Rings</div>
-                <div class = "book" id = "book3">Pokemon</div>
-                <div class = "book" id = "book4">BookMan</div>
-                <div class = "book" id = "book5">This book has a very long title that we should check </div>
-            </div>
-        </div>
-
-        <h2>Read</h2>
-        
-        <div class = "outerShelf" id = "outerShelfRead">
-            <div class = "innerShelf" id = "innerShelfRead">
-                <div class = "book" id = "book1">Harry Potter</div>
-                <div class = "book" id = "book2">The Lord of the Rings</div>
-                <div class = "book" id = "book3">Pokemon</div>
-                <div class = "book" id = "book4">BookMan</div>
-                <div class = "book" id = "book5">This book has a very long title that we should check </div>
-            </div>
-        </div>
-
-        <div class = "formPopup">
-            <form class= "form-container" id = "book-form">
-               <h1>Add a new book to the shelf!</h1>
-               <label for = "titleInput">Title:</label>
-               <input type="text" name = "titleInput" id = "titleInput" placeholder="Ex: Harry Potter" required>
-                <br>
-               <label for = "authorInput">Author:</label>
-               <input type="text" name = "authorInput" id = "authorInput" placeholder="Ex: JK Rowling" required>
-               <br>
-               <label for = "pageInput">Number of pages:</label>
-               <input type="number" name = "pageInput" id = "pageInput" placeholder="Ex: 352" min="0" max="5000" required>
-               <br>
-               <label for = "readInput">Read?</label>
-               <input type="checkbox" name = "readInput" id = "readInput" checked = "checked">
-               <br>
-               <input type="submit" class = "btn" id = "submitButton" value="Submit">
-               <input type="button" id = 'closeButton' class = "btn cancel" value="Close">
-               <input type="reset">
-            </form>
-        </div>
-        <script src='library.js'></script>
-    </body>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Library</h1>
+    <form class= "formContainer" id = "bookForm">
+        <h2>Add a new book to the list!</h1>
+        <label for = "titleInput">Title:</label>
+        <input type="text" name = "titleInput" id = "titleInput" placeholder="Ex: Harry Potter" required>
+        <label for = "authorInput">Author:</label>
+        <input type="text" name = "authorInput" id = "authorInput" placeholder="Ex: JK Rowling" required>
+        <label for = "pageInput">Number of pages:</label>
+        <input type="number" name = "pageInput" id = "pageInput" placeholder="Ex: 352" min="0" max="5000" required>
+        <label for = "readInput">Read?</label>
+        <input type="checkbox" name = "readInput" id = "readInput" checked = "checked">
+        <br>
+        <input type="submit" class = "btn" id = "submitButton" value="Submit">
+        <input type="reset">
+     </form>
+     
+    <script src='library.js'></script>
+</body>
 </html>

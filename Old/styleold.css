@@ -1,0 +1,70 @@
+h1, h2{
+    text-align: center;
+}
+
+#addButton{
+    margin-left: auto;
+    height: 50px;
+    
+}
+
+.outerShelf{
+    margin: 100px auto 80px auto;
+    width: 800px;
+    height: 160px;
+    padding: 0px 10px 15px 10px;
+    background-color: lightgrey;
+    box-shadow: 0px 20px 20px grey;
+}
+
+.innerShelf{
+    height: 220px;
+    position: relative;
+    bottom: 60px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.book{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    writing-mode: vertical-rl;
+    max-height: 210px;
+    padding: 10px;
+    /*max-width: 40px;*/
+    display: flex;
+    align-items: center;
+}
+
+#book-form{
+    display: none;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 800px;
+    border: 3px solid #000000;
+    z-index: 9;
+}
+
+.form-container{
+    padding: 10px;
+    background-color: white;
+}
+
+.bookInfo{
+    display: none;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 800px;
+    border: 3px solid #000000;
+    padding: 10px;
+    background-color: white;
+    z-index: 9;
+}

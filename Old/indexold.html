@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styleold.css">
+    </head>
+    <body>
+        <h1>Library</h1>
+        <input id = "addButton" type="button" value="Add another book to the shelf!"></input>
+        <h2>Not read yet</h2>
+
+        <div class = "outerShelf" id = "outerShelfNotRead">
+            <div class = "innerShelf" id = "innerShelfNotRead">
+               
+            </div>
+        </div>
+
+        <h2>Read</h2>
+        
+        <div class = "outerShelf" id = "outerShelfRead">
+            <div class = "innerShelf" id = "innerShelfRead">
+                
+            </div>
+        </div>
+
+        <div class = "formPopup">
+            <form class= "form-container" id = "book-form">
+               <h1>Add a new book to the shelf!</h1>
+               <label for = "titleInput">Title:</label>
+               <input type="text" name = "titleInput" id = "titleInput" placeholder="Ex: Harry Potter" required>
+                <br>
+               <label for = "authorInput">Author:</label>
+               <input type="text" name = "authorInput" id = "authorInput" placeholder="Ex: JK Rowling" required>
+               <br>
+               <label for = "pageInput">Number of pages:</label>
+               <input type="number" name = "pageInput" id = "pageInput" placeholder="Ex: 352" min="0" max="5000" required>
+               <br>
+               <label for = "readInput">Read?</label>
+               <input type="checkbox" name = "readInput" id = "readInput" checked = "checked">
+               <br>
+               <input type="submit" class = "btn" id = "submitButton" value="Submit">
+               <input type="button" id = 'closeButton' class = "btn cancel" value="Close">
+               <input type="reset">
+            </form>
+        </div>
+
+        <div class = "bookInfo">
+            <div id = "haryPotter">
+                <h2>Harry Potter</h2>
+                <h3>Author: JK Rowling</h3>
+                <h3>Pages: 666</h3>
+                <h3>Read!</h3>
+                <input type="button" value="Edit">
+                <input type="button" value="Close">
+                <input type="button" value="Delete">
+            </div>
+        </div>
+        <script src='libraryold.js'></script>
+    </body>
+</html>
