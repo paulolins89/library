@@ -8,18 +8,49 @@
     <form class= "formContainer" id = "bookForm">
         <h2>Add a new book to the list!</h1>
         <label for = "titleInput">Title:</label>
-        <input type="text" name = "titleInput" id = "titleInput" placeholder="Ex: Harry Potter" required>
+        <input type="text" name = "titleInput" id = "titleInput" placeholder="Harry Potter" required>
         <label for = "authorInput">Author:</label>
-        <input type="text" name = "authorInput" id = "authorInput" placeholder="Ex: JK Rowling" required>
-        <label for = "pageInput">Number of pages:</label>
-        <input type="number" name = "pageInput" id = "pageInput" placeholder="Ex: 352" min="0" max="5000" required>
+        <input type="text" name = "authorInput" id = "authorInput" placeholder="JK Rowling" required>
+        <label for = "pageInput">Pages:</label>
+        <input type="number" name = "pageInput" id = "pageInput" placeholder="352" min="0" max="5000" required>
         <label for = "readInput">Read?</label>
         <input type="checkbox" name = "readInput" id = "readInput" checked = "checked">
         <br>
         <input type="submit" class = "btn" id = "submitButton" value="Submit">
         <input type="reset">
      </form>
+
      
-    <script src='library.js'></script>
+    <div class = "columnHeadings">
+        <p>Title</p>
+        <p>Author</p>
+        <p>Pages</p>
+        <p>Read?</p>
+        <p>Delete?</p>
+    </div>
+    <div class = "booksTable" id = "booksTable">
+        <div class = "books" id = "book1">
+            <p>Harry Potter</p>
+            <p>JK Rowling</p>
+            <p>123</p>
+            <input type="checkbox" name = "readInput" id = "readInput" checked = "checked">
+            <input type = "button" value = "Delete?">
+        </div>
+        <div class = "books" id = "book2">
+            <p>Lord of the Rings</p>
+            <p>JRR Tolkien</p>
+            <p>666</p>
+            <input type="checkbox" name = "readInput" id = "readInput" checked = "checked">
+            <input type = "button" value = "Delete?">
+        </div>
+        <div class = "books" id = "book3">
+            <p>Pokemon</p>
+            <p>Some guy</p>
+            <p>444</p>
+            <input type="checkbox" name = "readInput" id = "readInput" checked = "checked">
+            <input type = "button" value = "Delete?">
+        </div>
+     </div>
+    <script src='library2.js'></script>
 </body>
 </html>

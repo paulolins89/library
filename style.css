@@ -1,0 +1,7 @@
+.booksTable{
+    display: flex;
+    flex-direction: column;
+}
+.books, .columnHeadings{
+    display: flex;
+}
