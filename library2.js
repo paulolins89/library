@@ -1,5 +1,19 @@
 let myLibrary = [];
 
+
+if(localStorage.length > 0){
+    let i = 0;
+    for (books in localStorage){
+        myLibrary[i] = JSON.parse(localStorage.getItem('book' + i));
+        i++;
+        //addBookToLibrary(myLibrary)
+    }
+    
+}
+
+localStorage.clear();
+
+
 function Book(title, author, pages, read){
     this.title = title;
     this.author = author;
@@ -41,10 +55,38 @@ function addBookToLibrary(myLibrary){
         deleteButton.setAttribute("id", 'delete' + i);
         
         newBook.appendChild(deleteButton);
-        
+        localStorage.setItem(('book' + i), JSON.stringify(myLibrary[i]));
+    }
+    
+}
+
+// detects whether localStorage is both supported and available
+function storageAvailable(type) {
+    var storage;
+    try {
+        storage = window[type];
+        var x = '__storage_test__';
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    }
+    catch(e) {
+        return e instanceof DOMException && (
+            // everything except Firefox
+            e.code === 22 ||
+            // Firefox
+            e.code === 1014 ||
+            // test name field too, because code might not be present
+            // everything except Firefox
+            e.name === 'QuotaExceededError' ||
+            // Firefox
+            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+            // acknowledge QuotaExceededError only if there's something already stored
+            (storage && storage.length !== 0);
     }
 }
 
+/*
 //can be deleted after you remove the pre-added books
 myLibrary.push(new Book('Pokemon', 'Hiroshi Osaka', 122, 'on'));
 myLibrary.push(new Book('Harry Potter', 'JK Rowling', 234, 'on'));
@@ -52,10 +94,11 @@ myLibrary.push(new Book('The Lord of the Rings', 'JRR Tolkien', 345, 'on'));
 myLibrary.push(new Book('The Power of Habit', 'John McAdoo', 455, 'off'));
 myLibrary.push(new Book('Sapiens', 'Ireali Dude', 567, 'off'));
 myLibrary.push(new Book('Outliers', 'Malcolm Gladwell', 678, 'off'));
+*/
 
 booksTable = document.getElementById('booksTable');
 
-addBookToLibrary(myLibrary);
+//addBookToLibrary(myLibrary);
 
 bookForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -82,7 +125,6 @@ booksTable.addEventListener('click', event => {
         }else{
             myLibrary[targetIndex].read = "on";
         }
-        console.log(myLibrary);
     }
 });
 
