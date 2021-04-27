@@ -1,18 +1,16 @@
 let myLibrary = [];
 
-
+//checks if there is local storage
 if(localStorage.length > 0){
     let i = 0;
-    for (books in localStorage){
-        myLibrary[i] = JSON.parse(localStorage.getItem('book' + i));
-        i++;
-        //addBookToLibrary(myLibrary)
+    for (key in localStorage){
+        if (localStorage.hasOwnProperty(key)){
+            myLibrary[i] = JSON.parse(localStorage.getItem(key));
+            i++;
+        }
     }
-    
+    addBookToLibrary(myLibrary);
 }
-
-localStorage.clear();
-
 
 function Book(title, author, pages, read){
     this.title = title;
@@ -21,10 +19,12 @@ function Book(title, author, pages, read){
     this.read = read;
 }
 
+//add the books to the library as well as updates local storage
 function addBookToLibrary(myLibrary){
     while (booksTable.lastElementChild){
         booksTable.removeChild(booksTable.lastElementChild);
     }
+    localStorage.clear();
     for(i = 0; i < myLibrary.length; i++){
         let newBook = document.createElement("div");
         newBook.classList.add('books');
@@ -86,19 +86,7 @@ function storageAvailable(type) {
     }
 }
 
-/*
-//can be deleted after you remove the pre-added books
-myLibrary.push(new Book('Pokemon', 'Hiroshi Osaka', 122, 'on'));
-myLibrary.push(new Book('Harry Potter', 'JK Rowling', 234, 'on'));
-myLibrary.push(new Book('The Lord of the Rings', 'JRR Tolkien', 345, 'on'));
-myLibrary.push(new Book('The Power of Habit', 'John McAdoo', 455, 'off'));
-myLibrary.push(new Book('Sapiens', 'Ireali Dude', 567, 'off'));
-myLibrary.push(new Book('Outliers', 'Malcolm Gladwell', 678, 'off'));
-*/
-
 booksTable = document.getElementById('booksTable');
-
-//addBookToLibrary(myLibrary);
 
 bookForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -116,7 +104,6 @@ booksTable.addEventListener('click', event => {
     if (event.target.className == 'deleteButton'){
         let targetIndex = parseFloat(event.target.id.slice(6));
         myLibrary = myLibrary.slice(0,targetIndex).concat(myLibrary.slice(targetIndex + 1))
-        addBookToLibrary(myLibrary);
     }
     if (event.target.className == 'readCheckbox'){
         let targetIndex = parseFloat(event.target.id.slice(4));
@@ -126,5 +113,6 @@ booksTable.addEventListener('click', event => {
             myLibrary[targetIndex].read = "on";
         }
     }
+    addBookToLibrary(myLibrary);
 });
 
