@@ -30,10 +30,12 @@ function addBookToLibrary(myLibrary){
             read.setAttribute("checked", "checked");   
         }
         newBook.appendChild(read);
-        let deletebutton = document.createElement("input");
-        deletebutton.setAttribute("type", "button");
-        deletebutton.setAttribute("value", "Delete?");
-        newBook.appendChild(deletebutton);
+        let deleteButton = document.createElement("input");
+        deleteButton.setAttribute("type", "button");
+        deleteButton.setAttribute("value", "Delete?");
+        deleteButton.classList.add('deleteButton');
+        deleteButton.setAttribute("id", 'delete' + i);
+        newBook.appendChild(deleteButton);
         
     }
 }
@@ -50,6 +52,14 @@ booksTable = document.getElementById('booksTable');
 console.log(myLibrary);
 addBookToLibrary(myLibrary);
 
+deleteButtons = document.querySelectorAll('.deleteButton');
+
+deleteButtons.forEach(input => {
+    input.addEventListener('click', event => {
+        console.log(event);
+    });
+});
+
 bookForm.addEventListener('submit', event => {
     event.preventDefault();
     let titleInput = document.getElementById('titleInput').value;
@@ -60,5 +70,6 @@ bookForm.addEventListener('submit', event => {
     myLibrary.push(new Book(titleInput, authorInput, pageInput, readInput));
     addBookToLibrary(myLibrary);
     bookForm.reset();
-    console.log(myLibrary);
+    console.log(deleteButtons);
 });
+
