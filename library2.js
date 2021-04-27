@@ -24,22 +24,28 @@ function addBookToLibrary(myLibrary){
         newBook.appendChild(title);
         newBook.appendChild(author);
         newBook.appendChild(pages);
+        
         let read = document.createElement("input");
         read.setAttribute("type", "checkbox");
+        read.classList.add('readCheckbox');
+        read.setAttribute("id", 'read' + i);
         if(myLibrary[i].read == 'on'){
             read.setAttribute("checked", "checked");   
         }
         newBook.appendChild(read);
+        
         let deleteButton = document.createElement("input");
         deleteButton.setAttribute("type", "button");
-        deleteButton.setAttribute("value", "Delete?");
+        deleteButton.setAttribute("value", "Delete");
         deleteButton.classList.add('deleteButton');
         deleteButton.setAttribute("id", 'delete' + i);
+        
         newBook.appendChild(deleteButton);
         
     }
 }
 
+//can be deleted after you remove the pre-added books
 myLibrary.push(new Book('Pokemon', 'Hiroshi Osaka', 122, 'on'));
 myLibrary.push(new Book('Harry Potter', 'JK Rowling', 234, 'on'));
 myLibrary.push(new Book('The Lord of the Rings', 'JRR Tolkien', 345, 'on'));
@@ -49,16 +55,7 @@ myLibrary.push(new Book('Outliers', 'Malcolm Gladwell', 678, 'off'));
 
 booksTable = document.getElementById('booksTable');
 
-console.log(myLibrary);
 addBookToLibrary(myLibrary);
-
-deleteButtons = document.querySelectorAll('.deleteButton');
-
-deleteButtons.forEach(input => {
-    input.addEventListener('click', event => {
-        console.log(event);
-    });
-});
 
 bookForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -70,6 +67,22 @@ bookForm.addEventListener('submit', event => {
     myLibrary.push(new Book(titleInput, authorInput, pageInput, readInput));
     addBookToLibrary(myLibrary);
     bookForm.reset();
-    console.log(deleteButtons);
+});
+
+booksTable.addEventListener('click', event => {
+    if (event.target.className == 'deleteButton'){
+        let targetIndex = parseFloat(event.target.id.slice(6));
+        myLibrary = myLibrary.slice(0,targetIndex).concat(myLibrary.slice(targetIndex + 1))
+        addBookToLibrary(myLibrary);
+    }
+    if (event.target.className == 'readCheckbox'){
+        let targetIndex = parseFloat(event.target.id.slice(4));
+        if(myLibrary[targetIndex].read == "on"){
+            myLibrary[targetIndex].read = "off";
+        }else{
+            myLibrary[targetIndex].read = "on";
+        }
+        console.log(myLibrary);
+    }
 });
 
