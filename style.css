@@ -1,7 +1,33 @@
+body {
+    text-align: center;
+}
+
+label {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#pageInput{
+    width: 50px;
+}
+
+.btn{
+    margin: 10px;
+}
+
 .booksTable{
     display: flex;
     flex-direction: column;
 }
+
 .books, .columnHeadings{
     display: flex;
+    justify-content: space-evenly;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+p, .readCheckbox, .deleteButton{
+    flex-basis: 20%;
+    align-self: center;
 }
