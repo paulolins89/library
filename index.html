@@ -2,17 +2,19 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Girassol&family=Merriweather&family=Montserrat&display=swap" rel="stylesheet">  
 </head>
 <body>
     <h1>Library</h1>
     <form class= "formContainer" id = "bookForm">
         <h2>Add a new book to the list!</h1>
         <label for = "titleInput">Title:</label>
-        <input type="text" name = "titleInput" id = "titleInput" placeholder="Harry Potter" required>
+        <input type="text" name = "titleInput" id = "titleInput" placeholder="Pride and Prejudice" required>
         <label for = "authorInput">Author:</label>
-        <input type="text" name = "authorInput" id = "authorInput" placeholder="JK Rowling" required>
+        <input type="text" name = "authorInput" id = "authorInput" placeholder="Jane Austen" required>
         <label for = "pageInput">Pages:</label>
-        <input type="number" name = "pageInput" id = "pageInput" placeholder="352" min="0" max="5000" required>
+        <input type="number" name = "pageInput" id = "pageInput" placeholder="408" min="0" max="5000" required>
         <label for = "readInput">Read?</label>
         <input type="checkbox" name = "readInput" id = "readInput" checked = "checked">
         <br>
@@ -22,11 +24,11 @@
 
      
     <div class = "columnHeadings">
-        <p>Title</p>
-        <p>Author</p>
-        <p>Pages</p>
-        <p>Read?</p>
-        <p>Delete?</p>
+        <p class = "title">Title</p>
+        <p class = "title">Author</p>
+        <p class = "title">Pages</p>
+        <p class = "title">Read?</p>
+        <p class = "title">Delete?</p>
     </div>
     <div class = "booksTable" id = "booksTable">
     </div>

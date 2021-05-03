@@ -1,10 +1,16 @@
 body {
     text-align: center;
+    background-color: lavenderblush;
+}
+
+h1, h2, .title {
+    font-family: 'Merriweather', serif;
 }
 
 label {
     padding: 10px;
     margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #pageInput{
@@ -13,6 +19,7 @@ label {
 
 .btn{
     margin: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .booksTable{
@@ -30,4 +37,5 @@ label {
 p, .readCheckbox, .deleteButton{
     flex-basis: 20%;
     align-self: center;
+    font-family: 'Montserrat', sans-serif;
 }
