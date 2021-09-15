@@ -1,7 +1,5 @@
 let myLibrary = [];
 
-//checking to see what will happen on git
-
 //checks if there is local storage
 if(localStorage.length > 0){
     let i = 0;
@@ -14,13 +12,24 @@ if(localStorage.length > 0){
     addBookToLibrary(myLibrary);
 }
 
+class Book {
+    constructor(title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read; 
+    }
+}
+
 //object constructor
+/*
 function Book(title, author, pages, read){
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
 }
+*/
 
 //prints all the the books to the table as well as updates local storage
 function addBookToLibrary(myLibrary){
