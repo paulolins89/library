@@ -12,19 +12,33 @@ if(localStorage.length > 0){
     addBookToLibrary(myLibrary);
 }
 
+class Book {
+    constructor(title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read; 
+    }
+}
+
+//object constructor
+/*
 function Book(title, author, pages, read){
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
 }
+*/
 
-//add the books to the library as well as updates local storage
+//prints all the the books to the table as well as updates local storage
 function addBookToLibrary(myLibrary){
+    //first it deletes the entire list and clears the local store
     while (booksTable.lastElementChild){
         booksTable.removeChild(booksTable.lastElementChild);
     }
     localStorage.clear();
+    //cycles throught the length of the library to all everythig to the table again
     for(i = 0; i < myLibrary.length; i++){
         let newBook = document.createElement("div");
         newBook.classList.add('books');
@@ -88,6 +102,7 @@ function storageAvailable(type) {
 
 booksTable = document.getElementById('booksTable');
 
+//submission will add the elements in the form to the library list, and then will print everything again onto the page
 bookForm.addEventListener('submit', event => {
     event.preventDefault();
     let titleInput = document.getElementById('titleInput').value;
@@ -100,6 +115,8 @@ bookForm.addEventListener('submit', event => {
     bookForm.reset();
 });
 
+
+//listens to the possibility of a deleting or to change a checkbox
 booksTable.addEventListener('click', event => {
     if (event.target.className == 'deleteButton'){
         let targetIndex = parseFloat(event.target.id.slice(6));
